@@ -1,21 +1,10 @@
 {
   "version": 2,
-  "routes": [
-    {
-      "src": "/drinking",
-      "dest": "/public/drinking/index.html"
-    },
-    {
-      "src": "/weight",
-      "dest": "/public/weight/index.html"
-    },
-    {
-      "src": "/career",
-      "dest": "/public/career/index.html"
-    },
-    {
-      "src": "/money",
-      "dest": "/public/money/index.html"
-    }
+  "rewrites": [
+    { "source": "/drinking", "destination": "/public/drinking/index.html" },
+    { "source": "/weight", "destination": "/public/weight/index.html" },
+    { "source": "/career", "destination": "/public/career/index.html" },
+    { "source": "/money", "destination": "/public/money/index.html" },
+    { "source": "/", "destination": "/public/drinking/index.html" }
   ]
 }
