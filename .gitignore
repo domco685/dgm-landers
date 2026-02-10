@@ -1,0 +1,9 @@
+# Secrets
+Modoc.json
+
+# Temporary files
+*.tmp
+.DS_Store
+
+# Node modules (if we ever need them)
+node_modules/

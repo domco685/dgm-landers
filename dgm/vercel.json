@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/drinking",
+      "dest": "/public/drinking/index.html"
+    },
+    {
+      "src": "/weight",
+      "dest": "/public/weight/index.html"
+    },
+    {
+      "src": "/career",
+      "dest": "/public/career/index.html"
+    },
+    {
+      "src": "/money",
+      "dest": "/public/money/index.html"
+    }
+  ]
+}
