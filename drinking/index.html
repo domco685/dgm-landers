@@ -123,6 +123,47 @@
             margin: 40px auto;
             display: block;
         }
+    
+        .email-form {
+            margin: 30px 0;
+        }
+        
+        .email-input {
+            width: 100%;
+            padding: 18px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-family: inherit;
+        }
+        
+        .email-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: white;
+            color: #667eea;
+            padding: 18px 40px;
+            font-size: 20px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .submit-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body>
@@ -265,7 +306,18 @@
         <div class="cta-box">
             <h3>Ready to Try the ASKING Framework?</h3>
             <p>Get instant access to the complete Daily Growth Map system for just $37</p>
-            <a href="#order" class="cta-button">GET INSTANT ACCESS NOW</a>
+                            <form class="email-form" id="klaviyo-form" onsubmit="return handleSubmit(event)">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        class="email-input" 
+                        placeholder="Enter your email address" 
+                        required
+                    />
+                    <button type="submit" class="submit-button" id="submit-btn">
+                        <span id="button-text">GET THE FREE GUIDE NOW</span>
+                    </button>
+                </form>
             <p style="margin-top: 20px; font-size: 14px;">30-day money-back guarantee • Instant digital delivery</p>
         </div>
         
@@ -347,7 +399,18 @@
         <div class="cta-box">
             <h3>Transform Your Life Starting Today</h3>
             <p>Join hundreds of people who've quit drinking, lost weight, and transformed their lives using the ASKING framework</p>
-            <a href="#order" class="cta-button">YES, I'M READY → GET ACCESS NOW</a>
+                            <form class="email-form" id="klaviyo-form" onsubmit="return handleSubmit(event)">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        class="email-input" 
+                        placeholder="Enter your email address" 
+                        required
+                    />
+                    <button type="submit" class="submit-button" id="submit-btn">
+                        <span id="button-text">GET THE FREE GUIDE NOW</span>
+                    </button>
+                </form>
             <p style="margin-top: 20px; font-size: 14px;">💳 Secure checkout • 📧 Instant delivery • ✅ 30-day guarantee</p>
         </div>
         
@@ -392,7 +455,18 @@
         <div class="cta-box" id="order">
             <h3>Get Instant Access for Just $37</h3>
             <p style="font-size: 20px; margin-bottom: 30px;">Digital book + course + guided practices + AI sidekick</p>
-            <a href="https://dailygrowthmap.com/checkout" class="cta-button" style="font-size: 22px; padding: 20px 50px;">GET THE DAILY GROWTH MAP NOW</a>
+                            <form class="email-form" id="klaviyo-form" onsubmit="return handleSubmit(event)">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        class="email-input" 
+                        placeholder="Enter your email address" 
+                        required
+                    />
+                    <button type="submit" class="submit-button" id="submit-btn">
+                        <span id="button-text">GET THE FREE GUIDE NOW</span>
+                    </button>
+                </form>
             <p style="margin-top: 30px; font-size: 16px; opacity: 0.9;">
                 ✅ Instant access via email<br>
                 ✅ 30-day money-back guarantee<br>
@@ -422,7 +496,18 @@
         <p style="text-align: center; margin: 50px 0; font-size: 24px; font-weight: 600;">The question is: Are you ready?</p>
         
         <div class="cta-box">
-            <a href="https://dailygrowthmap.com/checkout" class="cta-button" style="font-size: 22px; padding: 20px 50px;">YES, I'M READY → GET INSTANT ACCESS</a>
+                            <form class="email-form" id="klaviyo-form" onsubmit="return handleSubmit(event)">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        class="email-input" 
+                        placeholder="Enter your email address" 
+                        required
+                    />
+                    <button type="submit" class="submit-button" id="submit-btn">
+                        <span id="button-text">GET THE FREE GUIDE NOW</span>
+                    </button>
+                </form>
         </div>
         
         <hr style="margin: 60px 0; border: none; border-top: 1px solid #ddd;">

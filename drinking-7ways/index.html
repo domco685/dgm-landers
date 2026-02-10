@@ -226,6 +226,47 @@
             margin-top: 15px;
             font-weight: 600;
         }
+    
+        .email-form {
+            margin: 30px 0;
+        }
+        
+        .email-input {
+            width: 100%;
+            padding: 18px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-family: inherit;
+        }
+        
+        .email-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: white;
+            color: #667eea;
+            padding: 18px 40px;
+            font-size: 20px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .submit-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body>
@@ -366,7 +407,18 @@
         <div class="cta-box">
             <h3>Get the Free ASKING Framework Guide</h3>
             <p>Step-by-step instructions + 7-day email course to help you apply all 7 ways</p>
-            <a href="#signup" class="cta-button">GET THE FREE GUIDE NOW</a>
+                            <form class="email-form" id="klaviyo-form" onsubmit="return handleSubmit(event)">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        class="email-input" 
+                        placeholder="Enter your email address" 
+                        required
+                    />
+                    <button type="submit" class="submit-button" id="submit-btn">
+                        <span id="button-text">GET THE FREE GUIDE NOW</span>
+                    </button>
+                </form>
             <p style="margin-top: 20px; font-size: 14px;">No credit card required • Instant access</p>
         </div>
         
@@ -431,7 +483,18 @@
         <div class="cta-box" id="signup">
             <h3>Get the Free ASKING Framework Guide</h3>
             <p style="font-size: 20px; margin-bottom: 30px;">Join hundreds of people who've quit drinking using these 7 ways</p>
-            <a href="#" class="cta-button" style="font-size: 22px; padding: 20px 50px;">YES, SEND ME THE FREE GUIDE</a>
+                            <form class="email-form" id="klaviyo-form" onsubmit="return handleSubmit(event)">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        class="email-input" 
+                        placeholder="Enter your email address" 
+                        required
+                    />
+                    <button type="submit" class="submit-button" id="submit-btn">
+                        <span id="button-text">GET THE FREE GUIDE NOW</span>
+                    </button>
+                </form>
             <p style="margin-top: 30px; font-size: 16px; opacity: 0.9;">
                 ✅ Instant access via email<br>
                 ✅ No credit card required<br>
@@ -460,7 +523,18 @@
         <p style="text-align: center; margin: 50px 0; font-size: 24px; font-weight: 600;">The question is: Are you ready to try these 7 ways?</p>
         
         <div class="cta-box">
-            <a href="#" class="cta-button" style="font-size: 22px; padding: 20px 50px;">YES, SEND ME THE FREE GUIDE</a>
+                            <form class="email-form" id="klaviyo-form" onsubmit="return handleSubmit(event)">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        class="email-input" 
+                        placeholder="Enter your email address" 
+                        required
+                    />
+                    <button type="submit" class="submit-button" id="submit-btn">
+                        <span id="button-text">GET THE FREE GUIDE NOW</span>
+                    </button>
+                </form>
         </div>
         
         <hr style="margin: 60px 0; border: none; border-top: 1px solid #ddd;">
