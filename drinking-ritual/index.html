@@ -12,16 +12,16 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.7;
-            color: #333;
-            background: #f9f9f9;
+            color: #E5E5E5;
+            background: #0A0A0A;
         }
         
         .container {
             max-width: 720px;
             margin: 0 auto;
-            background: white;
+            background: #0A0A0A;
             padding: 20px;
         }
         
@@ -36,7 +36,7 @@
             line-height: 1.3;
             margin-bottom: 30px;
             font-weight: 700;
-            color: #1a1a1a;
+            color: #FFFFFF;
         }
         
         @media (min-width: 768px) {
@@ -49,16 +49,25 @@
             font-size: 24px;
             margin: 50px 0 20px;
             font-weight: 600;
-            color: #2a2a2a;
+            color: #FDB813;
+        }
+        
+        h3 {
+            font-size: 22px;
+            margin: 30px 0 15px;
+            font-weight: 600;
+            color: #FDB813;
         }
         
         p {
             margin-bottom: 20px;
             font-size: 18px;
+            color: #E5E5E5;
         }
         
         .credibility-box {
-            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+            background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+            border: 1px solid #FDB813;
             border-radius: 12px;
             padding: 30px;
             margin: 40px 0;
@@ -70,18 +79,19 @@
             height: 120px;
             border-radius: 50%;
             margin-bottom: 20px;
-            border: 4px solid white;
+            border: 4px solid #FDB813;
         }
         
         .credibility-box h3 {
             font-size: 24px;
             margin-bottom: 10px;
+            color: #FFFFFF;
         }
         
         .credibility-box p {
             font-size: 16px;
             margin-bottom: 15px;
-            color: #555;
+            color: #CCCCCC;
         }
         
         .logo-row {
@@ -95,14 +105,14 @@
         .logo-placeholder {
             width: 100px;
             height: 40px;
-            background: white;
+            background: #FDB813;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 12px;
             font-weight: 600;
-            color: #EAB308;
+            color: #0A0A0A;
         }
         
         .results-list {
@@ -114,12 +124,12 @@
         .results-list li {
             padding: 8px 0;
             font-size: 16px;
-            color: #444;
+            color: #E5E5E5;
         }
         
         .results-list li:before {
             content: "→ ";
-            color: #EAB308;
+            color: #FDB813;
             font-weight: bold;
         }
         
@@ -128,10 +138,12 @@
             height: auto;
             margin: 40px 0;
             border-radius: 8px;
+            border: 1px solid #2A2A2A;
         }
         
         .cta-box {
-            background: linear-gradient(135deg, #EAB308 0%, #F59E0B 100%);
+            background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+            border: 2px solid #FDB813;
             color: white;
             padding: 40px;
             border-radius: 12px;
@@ -142,37 +154,71 @@
         .cta-box h3 {
             font-size: 28px;
             margin-bottom: 20px;
+            color: #FDB813;
         }
         
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #EAB308;
+        .cta-box p {
+            color: #E5E5E5;
+        }
+        
+        .email-form {
+            margin: 30px 0;
+        }
+        
+        .email-input {
+            width: 100%;
+            padding: 18px;
+            font-size: 18px;
+            border: 2px solid #2A2A2A;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-family: inherit;
+            background: #1A1A1A;
+            color: #FFFFFF;
+        }
+        
+        .email-input:focus {
+            outline: none;
+            border-color: #FDB813;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: #FDB813;
+            color: #0A0A0A;
             padding: 18px 40px;
             font-size: 20px;
             font-weight: 600;
-            text-decoration: none;
+            border: none;
             border-radius: 8px;
-            margin-top: 20px;
-            transition: transform 0.2s;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
         }
         
-        .cta-button:hover {
+        .submit-button:hover {
             transform: scale(1.05);
+            background: #FDC935;
+        }
+        
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
         
         .highlight {
-            background: #fff3cd;
+            background: #FDB813;
+            color: #0A0A0A;
             padding: 3px 8px;
             border-radius: 3px;
+            font-weight: 600;
         }
         
         .testimonial {
-            border-left: 4px solid #EAB308;
+            border-left: 4px solid #FDB813;
             padding-left: 20px;
             margin: 30px 0;
             font-style: italic;
-            color: #555;
+            color: #CCCCCC;
         }
         
         ul {
@@ -182,11 +228,12 @@
         ul li {
             margin-bottom: 10px;
             font-size: 18px;
+            color: #E5E5E5;
         }
         
         .ritual-step {
-            background: #f8f9fa;
-            border-left: 4px solid #EAB308;
+            background: #1A1A1A;
+            border-left: 4px solid #FDB813;
             padding: 20px;
             margin: 20px 0;
             border-radius: 8px;
@@ -195,48 +242,67 @@
         .ritual-step h3 {
             font-size: 20px;
             margin-bottom: 10px;
-            color: #EAB308;
+            color: #FDB813;
         }
-    
-        .email-form {
+        
+        .ritual-step p {
+            color: #E5E5E5;
+        }
+        
+        .way-box {
+            background: #1A1A1A;
+            border-left: 5px solid #FDB813;
+            padding: 25px;
             margin: 30px 0;
+            border-radius: 8px;
         }
         
-        .email-input {
-            width: 100%;
-            padding: 18px;
-            font-size: 18px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
+        .way-box h3 {
+            margin-top: 0;
             margin-bottom: 15px;
-            font-family: inherit;
+            color: #FDB813;
         }
         
-        .email-input:focus {
-            outline: none;
-            border-color: #EAB308;
-        }
-        
-        .submit-button {
-            width: 100%;
-            background: white;
-            color: #EAB308;
-            padding: 18px 40px;
-            font-size: 20px;
+        .way-box .problem {
+            color: #FF6B6B;
             font-weight: 600;
-            border: none;
+            margin-bottom: 10px;
+        }
+        
+        .way-box .solution {
+            color: #51CF66;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .way-box .action {
+            background: #FDB813;
+            color: #0A0A0A;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        
+        .way-box p {
+            color: #E5E5E5;
+        }
+        
+        .framework-image {
+            max-width: 600px;
+            margin: 40px auto;
+            display: block;
+            border: 1px solid #2A2A2A;
             border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.2s;
         }
         
-        .submit-button:hover {
-            transform: scale(1.05);
+        hr {
+            border: none;
+            border-top: 1px solid #2A2A2A;
         }
         
-        .submit-button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
+        a {
+            color: #FDB813;
         }
     </style>
 </head>
