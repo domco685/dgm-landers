@@ -750,14 +750,14 @@
                 
                 if (response.ok) {
                     // Success - redirect to Skool
-                    window.location.href = 'https://skool.com/ambitions';
+                    window.location.href = 'https://pages.dailygrowthmap.com/identity-reset';
                 } else {
                     throw new Error('Submission failed');
                 }
             } catch (error) {
                 // On error, still redirect (graceful fallback)
                 console.error('Klaviyo error:', error);
-                window.location.href = 'https://skool.com/ambitions';
+                window.location.href = 'https://pages.dailygrowthmap.com/identity-reset';
             }
         }
         </script>
