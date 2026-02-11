@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Identity Reset - 30-Day Transformation Program</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0A0A0A;
+            color: #E5E5E5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+        }
+
+        .eyebrow {
+            color: #FDB813;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        .subheadline {
+            font-size: 22px;
+            color: #A0A0A0;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: #FDB813;
+            color: #0A0A0A;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 20px 50px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(253, 184, 19, 0.3);
+            margin: 20px 0;
+        }
+
+        .cta-button:hover {
+            background: #FFC933;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(253, 184, 19, 0.4);
+        }
+
+        .guarantee {
+            color: #A0A0A0;
+            font-size: 14px;
+            margin-top: 16px;
+        }
+
+        /* Transformation Section */
+        .transformation {
+            background: #111111;
+            border: 1px solid #222222;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 60px 0;
+        }
+
+        .transformation h2 {
+            font-size: 32px;
+            color: #FDB813;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .before-after-item {
+            text-align: center;
+        }
+
+        .before-after-item h3 {
+            color: #FFFFFF;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .stat-line {
+            color: #A0A0A0;
+            font-size: 16px;
+            margin: 8px 0;
+        }
+
+        .stat-highlight {
+            color: #FDB813;
+            font-weight: 600;
+        }
+
+        /* What's Inside Section */
+        .whats-inside {
+            margin: 60px 0;
+        }
+
+        .whats-inside h2 {
+            font-size: 36px;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .module {
+            background: #111111;
+            border-left: 4px solid #FDB813;
+            padding: 30px;
+            margin-bottom: 24px;
+            border-radius: 8px;
+        }
+
+        .module h3 {
+            font-size: 22px;
+            color: #FDB813;
+            margin-bottom: 12px;
+        }
+
+        .module p {
+            color: #C0C0C0;
+            line-height: 1.7;
+        }
+
+        /* The Problem Section */
+        .problem {
+            background: #0D0D0D;
+            border: 1px solid #1A1A1A;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+
+        .problem h2 {
+            font-size: 32px;
+            color: #FFFFFF;
+            margin-bottom: 24px;
+        }
+
+        .problem p {
+            font-size: 18px;
+            color: #B0B0B0;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .problem ul {
+            margin: 24px 0;
+            padding-left: 24px;
+        }
+
+        .problem li {
+            color: #C0C0C0;
+            margin: 12px 0;
+            font-size: 17px;
+        }
+
+        /* Bonuses Section */
+        .bonuses {
+            background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%);
+            border: 2px solid #FDB813;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+
+        .bonuses h2 {
+            font-size: 32px;
+            color: #FDB813;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .bonus-item {
+            background: #111111;
+            padding: 24px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #222222;
+        }
+
+        .bonus-item h4 {
+            color: #FFFFFF;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .bonus-item p {
+            color: #B0B0B0;
+            line-height: 1.6;
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            text-align: center;
+            background: #111111;
+            border: 2px solid #FDB813;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+
+        .guarantee-section h2 {
+            font-size: 32px;
+            color: #FDB813;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-section p {
+            font-size: 18px;
+            color: #C0C0C0;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* About Dom Section */
+        .about {
+            background: #0D0D0D;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+
+        .about h2 {
+            font-size: 32px;
+            color: #FFFFFF;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 17px;
+            color: #B0B0B0;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .credentials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .credential-badge {
+            background: #111111;
+            padding: 16px 24px;
+            border-radius: 8px;
+            border: 1px solid #222222;
+            color: #FDB813;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            text-align: center;
+            background: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
+            padding: 60px 40px;
+            border-radius: 12px;
+            margin: 60px 0;
+            border: 1px solid #222222;
+        }
+
+        .final-cta h2 {
+            font-size: 36px;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        .final-cta .price {
+            font-size: 48px;
+            color: #FDB813;
+            font-weight: 700;
+            margin: 30px 0;
+        }
+
+        .final-cta .price-note {
+            color: #A0A0A0;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        /* Secondary CTAs */
+        .secondary-links {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #222222;
+            text-align: center;
+        }
+
+        .secondary-link {
+            display: block;
+            color: #FDB813;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 12px 0;
+            transition: color 0.3s ease;
+        }
+
+        .secondary-link:hover {
+            color: #FFC933;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .subheadline {
+                font-size: 18px;
+            }
+
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                width: 100%;
+                padding: 18px 30px;
+            }
+
+            .credentials {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="eyebrow">30-Day Identity Transformation</div>
+            <h1>The Identity Reset</h1>
+            <p class="subheadline">
+                Stop trying to change your behavior. Start building the identity that makes change inevitable.
+            </p>
+            <a href="https://zu1pyn-cp.myshopify.com/cart/52652806537513:1?channel=buy_button&discount=YJ6GE03RTYPE" class="cta-button">
+                Start Your Reset Today
+            </a>
+            <p class="guarantee">30-Day Money-Back Guarantee</p>
+        </div>
+
+        <!-- The Problem -->
+        <div class="problem">
+            <h2>You've been doing it backwards.</h2>
+            <p>
+                You set the goal. You build the plan. You force yourself to follow through.
+            </p>
+            <p>
+                And it works... until it doesn't.
+            </p>
+            <p>
+                <strong>Here's why:</strong>
+            </p>
+            <ul>
+                <li>You're trying to change behavior without changing identity</li>
+                <li>Your subconscious still thinks you're the old you</li>
+                <li>Every "should" is a battle against who you think you are</li>
+            </ul>
+            <p style="margin-top: 30px; color: #FDB813; font-weight: 600; font-size: 20px;">
+                The Identity Reset flips this. Build the identity first. The behavior follows automatically.
+            </p>
+        </div>
+
+        <!-- Transformation Story -->
+        <div class="transformation">
+            <h2>My Transformation</h2>
+            <div class="before-after">
+                <div class="before-after-item">
+                    <h3>Before</h3>
+                    <p class="stat-line"><span class="stat-highlight">280 lbs</span></p>
+                    <p class="stat-line"><span class="stat-highlight">20-year drinking problem</span></p>
+                    <p class="stat-line"><span class="stat-highlight">Successful but empty</span></p>
+                    <p class="stat-line">Growth Lead at Facebook & Shopify</p>
+                    <p class="stat-line">Crushing it externally, dying internally</p>
+                </div>
+                <div class="before-after-item">
+                    <h3>After</h3>
+                    <p class="stat-line"><span class="stat-highlight">180 lbs</span></p>
+                    <p class="stat-line"><span class="stat-highlight">Completely sober</span></p>
+                    <p class="stat-line"><span class="stat-highlight">$500K career breakthrough</span></p>
+                    <p class="stat-line">$1M+ saved</p>
+                    <p class="stat-line">Living with purpose</p>
+                </div>
+            </div>
+            <p style="text-align: center; color: #C0C0C0; margin-top: 30px; font-size: 18px;">
+                I didn't willpower my way through this. I rebuilt my identity from the ground up.
+            </p>
+        </div>
+
+        <!-- What's Inside -->
+        <div class="whats-inside">
+            <h2>What You Get in 30 Days</h2>
+            
+            <div class="module">
+                <h3>Week 1: The Masterpiece Visualization</h3>
+                <p>
+                    Learn to "paint" your future self with feelings, not thoughts. This is how you program your subconscious to become someone new—without willpower or discipline.
+                </p>
+            </div>
+
+            <div class="module">
+                <h3>Week 2: Identity Architecture</h3>
+                <p>
+                    Build the identity that supports your ambitions. Map your beliefs, behaviors, and values to the person you're becoming. This is where transformation becomes inevitable.
+                </p>
+            </div>
+
+            <div class="module">
+                <h3>Week 3: Reframing Limiting Beliefs</h3>
+                <p>
+                    Identify the hidden beliefs sabotaging your progress. Learn to decode the feeling underneath each belief and rewrite the story your subconscious is running.
+                </p>
+            </div>
+
+            <div class="module">
+                <h3>Week 4: Permission & Embodiment</h3>
+                <p>
+                    Give yourself permission to be the person you're becoming. Practice embodying the identity until it becomes your default state. This is when the shift locks in.
+                </p>
+            </div>
+
+            <div class="module">
+                <h3>Daily Practice: Feelings as Technology</h3>
+                <p>
+                    The 3-minute nightly practice that reprograms your identity while you sleep. Simple, powerful, and backed by neuroscience and ancient wisdom.
+                </p>
+            </div>
+        </div>
+
+        <!-- Bonuses -->
+        <div class="bonuses">
+            <h2>What Else You Get</h2>
+            
+            <div class="bonus-item">
+                <h4>✓ Weekly Live Calls with Dom</h4>
+                <p>
+                    Every week, join a live group call to ask questions, share progress, and get direct feedback on your transformation.
+                </p>
+            </div>
+
+            <div class="bonus-item">
+                <h4>✓ Private Community Access</h4>
+                <p>
+                    Share your ambitions, track progress, and connect with others on the same path. This isn't a motivational echo chamber—it's a space for real growth.
+                </p>
+            </div>
+
+            <div class="bonus-item">
+                <h4>✓ Accountability System</h4>
+                <p>
+                    Daily check-ins, weekly reflections, and progress tracking to keep you on course. The system holds you accountable so you don't have to rely on willpower.
+                </p>
+            </div>
+
+            <div class="bonus-item">
+                <h4>✓ Lifetime Access</h4>
+                <p>
+                    Complete the 30-day program on your timeline. Keep access forever. Come back whenever you need a reset.
+                </p>
+            </div>
+        </div>
+
+        <!-- About Dom -->
+        <div class="about">
+            <h2>Who's Guiding You</h2>
+            <p>
+                I'm Dom. I spent 10+ years in tech—Facebook, Instacart, Shopify—climbing the ladder while falling apart inside.
+            </p>
+            <p>
+                280 lbs. Drinking every night. Successful on paper, empty in reality.
+            </p>
+            <p>
+                Then I discovered what I call "feelings as technology"—the hidden operating system your subconscious runs on.
+            </p>
+            <p>
+                I didn't diet my way to 180 lbs. I didn't discipline my way to sobriety. I didn't hustle my way to a $500K career breakthrough.
+            </p>
+            <p style="color: #FDB813; font-weight: 600; font-size: 19px; margin-top: 30px;">
+                I rebuilt my identity. The rest followed automatically.
+            </p>
+            
+            <div class="credentials">
+                <div class="credential-badge">10+ Years Tech Leadership</div>
+                <div class="credential-badge">Facebook • Instacart • Shopify</div>
+                <div class="credential-badge">100 lbs Lost</div>
+                <div class="credential-badge">20 Years Sober</div>
+            </div>
+        </div>
+
+        <!-- Guarantee -->
+        <div class="guarantee-section">
+            <h2>30-Day Money-Back Guarantee</h2>
+            <p>
+                Go through the program. Do the work. If you don't feel a shift in your identity within 30 days, I'll refund every penny.
+            </p>
+            <p>
+                No hoops. No questions. Just email me.
+            </p>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="final-cta">
+            <h2>Ready to Reset?</h2>
+            <p style="color: #C0C0C0; font-size: 18px; margin: 20px 0;">
+                30 days. New identity. Lifetime access.
+            </p>
+            <div class="price">$297</div>
+            <p class="price-note">One-time payment • Includes everything above</p>
+            
+            <a href="https://zu1pyn-cp.myshopify.com/cart/52652806537513:1?channel=buy_button&discount=YJ6GE03RTYPE" class="cta-button">
+                Start Your Identity Reset
+            </a>
+            
+            <p class="guarantee">30-Day Money-Back Guarantee</p>
+
+            <!-- Secondary CTAs -->
+            <div class="secondary-links">
+                <p style="color: #A0A0A0; margin-bottom: 20px;">Not ready yet?</p>
+                <a href="https://skool.com/ambitions" class="secondary-link">→ Join the free Ambitions Community</a>
+                <a href="https://www.amazon.com/DAILY-GROWTH-MAP-Manifest-Powerful/dp/B0FQMWMT9D" class="secondary-link">→ Start with the Daily Growth Map book ($37)</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
