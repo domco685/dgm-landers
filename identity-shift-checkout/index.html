@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity Shift - Special One-Time Offer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tracking Pixels -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZNWXLTWZK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6ZNWXLTWZK');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #F8F8F8;
+            color: #1A1A1A;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: #0A0A0A;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: -20px -20px 30px -20px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .product-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .product-header {
+            border-bottom: 2px solid #FDB813;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .product-header h2 {
+            font-size: 32px;
+            color: #1A1A1A;
+            margin-bottom: 12px;
+        }
+
+        .product-header .tagline {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .price-box {
+            background: #FFF9E6;
+            border: 2px solid #FDB813;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 800;
+            color: #0A0A0A;
+        }
+
+        .original-price {
+            font-size: 24px;
+            color: #999;
+            text-decoration: line-through;
+            margin-right: 12px;
+        }
+
+        .savings {
+            background: #00AA44;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .whats-included {
+            margin: 30px 0;
+        }
+
+        .whats-included h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #0A0A0A;
+        }
+
+        .included-item {
+            padding: 16px 0;
+            border-bottom: 1px solid #E5E5E5;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .included-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkmark {
+            color: #00AA44;
+            font-size: 24px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .order-bump {
+            background: #FFF4E6;
+            border: 3px solid #FF6B00;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .order-bump::before {
+            content: "🔥 LIMITED TIME UPGRADE";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FF6B00;
+            color: white;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .order-bump h3 {
+            font-size: 28px;
+            color: #0A0A0A;
+            margin-bottom: 16px;
+            margin-top: 12px;
+        }
+
+        .order-bump p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .bump-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid #DDD;
+            transition: all 0.3s;
+        }
+
+        .bump-checkbox:hover {
+            border-color: #FF6B00;
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.2);
+        }
+
+        .bump-checkbox input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .bump-price {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .bump-price .new-price {
+            font-size: 28px;
+            font-weight: 800;
+            color: #FF6B00;
+        }
+
+        .bump-price .old-price {
+            font-size: 18px;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .cta-button {
+            width: 100%;
+            background: #FDB813;
+            color: #0A0A0A;
+            font-size: 22px;
+            font-weight: 700;
+            padding: 24px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(253, 184, 19, 0.3);
+            margin: 30px 0;
+        }
+
+        .cta-button:hover {
+            background: #FFC933;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(253, 184, 19, 0.5);
+        }
+
+        .guarantee {
+            background: #F0F8FF;
+            border: 2px solid #0066CC;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .guarantee h3 {
+            color: #0066CC;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .guarantee p {
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .guarantee strong {
+            color: #0066CC;
+        }
+
+        .testimonial {
+            background: #F9F9F9;
+            border-left: 4px solid #FDB813;
+            padding: 24px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #0A0A0A;
+            font-style: normal;
+            margin-top: 12px;
+        }
+
+        .urgency {
+            background: #FFE5E5;
+            border: 2px solid #CC0000;
+            color: #CC0000;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .product-header h2 {
+                font-size: 24px;
+            }
+
+            .price {
+                font-size: 36px;
+            }
+
+            .order-bump {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 IDENTITY SHIFT - Special One-Time Offer</h1>
+        </div>
+
+        <div class="urgency">
+            ⚠️ This special pricing expires when you leave this page
+        </div>
+
+        <div class="product-section">
+            <div class="product-header">
+                <h2>The Identity Shift: 30-Day Transformation Program</h2>
+                <p class="tagline">
+                    Stop fighting your subconscious. Reprogram your identity so change becomes automatic—not another battle of willpower.
+                </p>
+            </div>
+
+            <div class="price-box">
+                <div>
+                    <span class="original-price">$497</span>
+                    <span class="price">$297</span>
+                </div>
+                <div class="savings">SAVE $200 TODAY</div>
+                <p style="margin-top: 12px; color: #666;">One-time payment • Lifetime access</p>
+            </div>
+
+            <div class="whats-included">
+                <h3>What's Included:</h3>
+                
+                <div class="included-item">
+                    <span class="checkmark">✓</span>
+                    <div>
+                        <strong>4-Week Identity Shift Program</strong><br>
+                        Complete system to reprogram your subconscious identity. Week-by-week modules that build on each other.
+                    </div>
+                </div>
+
+                <div class="included-item">
+                    <span class="checkmark">✓</span>
+                    <div>
+                        <strong>The 3-Minute Nightly Practice</strong><br>
+                        The bedtime ritual that rewires your brain while you sleep. Takes 3 minutes, changes everything.
+                    </div>
+                </div>
+
+                <div class="included-item">
+                    <span class="checkmark">✓</span>
+                    <div>
+                        <strong>Weekly Live Group Calls</strong><br>
+                        Get direct guidance from Dom. Ask questions, share progress, get unstuck in real-time.
+                    </div>
+                </div>
+
+                <div class="included-item">
+                    <span class="checkmark">✓</span>
+                    <div>
+                        <strong>Private Community Access</strong><br>
+                        Connect with other high-achievers on the same journey. Real accountability, no fluff.
+                    </div>
+                </div>
+
+                <div class="included-item">
+                    <span class="checkmark">✓</span>
+                    <div>
+                        <strong>Lifetime Access</strong><br>
+                        Complete the program at your pace. Come back anytime you need a reset.
+                    </div>
+                </div>
+            </div>
+
+            <button class="cta-button" onclick="window.location.href='https://zu1pyn-cp.myshopify.com/cart/52652806537513:1?channel=buy_button&discount=YJ6GE03RTYPE'">
+                YES! Get Identity Shift for $297
+            </button>
+        </div>
+
+        <!-- ORDER BUMP 1 -->
+        <div class="order-bump">
+            <h3>🚀 Upgrade: Add The Complete Daily Growth Map System</h3>
+            <p>
+                <strong>Highly Recommended:</strong> Get the complete Daily Growth Map book + guided journal + AI sidekick. This is the full system that helped me lose 100 lbs, quit drinking, and save $1M. Perfect companion to the Identity Shift program.
+            </p>
+            <p>
+                The complete system retails for $147 on my website. <strong>Add it right now for ONLY $67</strong> while you have the chance.
+            </p>
+            
+            <label class="bump-checkbox">
+                <input type="checkbox" id="bump1">
+                <div style="flex: 1;">
+                    <strong>YES!</strong> Add Daily Growth Map System ($147 value)
+                </div>
+                <div class="bump-price">
+                    <div class="new-price">$67</div>
+                    <div class="old-price">$147</div>
+                </div>
+            </label>
+        </div>
+
+        <!-- ORDER BUMP 2 -->
+        <div class="order-bump">
+            <h3>💎 Add: 1-on-1 Breakthrough Session with Dom</h3>
+            <p>
+                <strong>Limited Availability:</strong> Get a private 60-minute session with Dom to accelerate your identity shift. We'll map your specific blocks, design your ideal identity, and create your personalized practice.
+            </p>
+            <p>
+                This normally costs $997 and has a 3-month waitlist. <strong>Add it today for $397</strong> and jump the line.
+            </p>
+            
+            <label class="bump-checkbox">
+                <input type="checkbox" id="bump2">
+                <div style="flex: 1;">
+                    <strong>YES!</strong> Add 1-on-1 Breakthrough Session ($997 value)
+                </div>
+                <div class="bump-price">
+                    <div class="new-price">$397</div>
+                    <div class="old-price">$997</div>
+                </div>
+            </label>
+        </div>
+
+        <div class="product-section">
+            <button class="cta-button" onclick="processOrder()">
+                Complete My Order
+            </button>
+
+            <p style="text-align: center; color: #666; font-size: 14px;">
+                Secure checkout • 30-day guarantee
+            </p>
+        </div>
+
+        <!-- TESTIMONIALS -->
+        <div class="product-section">
+            <h3 style="margin-bottom: 20px;">What Others Are Saying:</h3>
+            
+            <div class="testimonial">
+                "I've tried every self-help program. This is different. Within 2 weeks I noticed myself acting like the person I wanted to be—without forcing it. The 3-minute practice is deceptively powerful."
+                <div class="testimonial-author">— Michael R., Tech Executive</div>
+            </div>
+
+            <div class="testimonial">
+                "Lost 40 lbs in 3 months. Not because I had more discipline, but because my identity shifted. I became someone who takes care of their body. The behavior followed automatically."
+                <div class="testimonial-author">— Sarah K., Entrepreneur</div>
+            </div>
+
+            <div class="testimonial">
+                "I was skeptical. But after 30 days of the practice, I quit a 15-year smoking habit. No willpower. No struggle. I just... didn't want to anymore. That's when I knew this was real."
+                <div class="testimonial-author">— James T., Software Engineer</div>
+            </div>
+        </div>
+
+        <!-- GUARANTEE -->
+        <div class="guarantee">
+            <h3>💯 Our Action-Taker Guarantee</h3>
+            <p>
+                I fully believe in the transformational power of this program. That's why I offer a <strong>30-day guarantee—with one important condition: it's only for action-takers.</strong>
+            </p>
+            <p><strong>Here's How It Works:</strong></p>
+            <ul style="margin: 16px 0 16px 24px; line-height: 2;">
+                <li>You may request a refund within 30 days of purchase</li>
+                <li>You'll need to show proof that you completed the course materials (notes, screenshots, or exercises)</li>
+                <li>You'll need to provide a short explanation of how you applied the teachings and why you feel they didn't work for you</li>
+            </ul>
+            <p>
+                <strong>This policy ensures that only serious, committed people enroll</strong>—and it protects the integrity of the content for those truly ready to create change.
+            </p>
+            <p>
+                If you're willing to do the work, you can move forward with confidence—knowing you risk nothing.
+            </p>
+        </div>
+
+        <div class="product-section">
+            <h3 style="margin-bottom: 20px; text-align: center;">Ready to Shift Your Identity?</h3>
+            <button class="cta-button" onclick="processOrder()">
+                Get Identity Shift Now - $297
+            </button>
+        </div>
+
+        <div style="text-align: center; padding: 40px 20px; color: #999; font-size: 14px;">
+            <p><strong>Important Disclaimer:</strong></p>
+            <p>
+                Your journey with identity, transformation, and personal growth is uniquely your own. Results will always vary depending on many factors—including your background, experience, and the effort you're willing to put in.
+            </p>
+            <p style="margin-top: 12px;">
+                While countless people have transformed through this program, your results are ultimately in your hands.
+            </p>
+            <p style="margin-top: 12px;">
+                This site is not affiliated with or endorsed by Facebook/Meta, Google, TikTok, or any social media platform.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function processOrder() {
+            // Check if bumps are selected
+            const bump1 = document.getElementById('bump1').checked;
+            const bump2 = document.getElementById('bump2').checked;
+            
+            let total = 297;
+            let items = ['Identity Shift Program ($297)'];
+            
+            if (bump1) {
+                total += 67;
+                items.push('Daily Growth Map System ($67)');
+            }
+            
+            if (bump2) {
+                total += 397;
+                items.push('1-on-1 Breakthrough Session ($397)');
+            }
+            
+            // In production, this would add items to cart
+            // For now, just go to main product checkout
+            alert('Order Total: $' + total + '\\n\\nItems:\\n' + items.join('\\n') + '\\n\\nRedirecting to secure checkout...');
+            
+            // Redirect to Shopify
+            window.location.href = 'https://zu1pyn-cp.myshopify.com/cart/52652806537513:1?channel=buy_button&discount=YJ6GE03RTYPE';
+        }
+    </script>
+</body>
+</html>
