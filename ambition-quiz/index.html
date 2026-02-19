@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Drinking Getting In The Way of Your Ambitions?</title>
+    <meta name="description" content="Take this 60-second quiz to discover if alcohol is quietly sabotaging your biggest goals.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZNWXLTWZK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6ZNWXLTWZK');
+    </script>
+
+    <!-- Meta Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1040360674700004');
+      fbq('track', 'PageView');
+    </script>
+
+    <!-- TikTok Pixel -->
+    <script>
+      !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var o="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=o,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=o+"?sdkid="+e+"&lib="+t;var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r)};
+        ttq.load('CS3GBLRC77UCNDM3PL5G');
+        ttq.page();
+      }(window, document, 'ttq');
+    </script>
+
+    <!-- Axon Pixel -->
+    <script>
+      (function() {
+        var axon = document.createElement('script');
+        axon.type = 'text/javascript';
+        axon.async = true;
+        axon.src = 'https://cdn.axontracking.com/pixel.js';
+        axon.onload = function() {
+          if (typeof AxonPixel !== 'undefined') {
+            AxonPixel.init('a3ead66a-fcb2-4452-9b58-aef3d8bfecca');
+            AxonPixel.track('PageView');
+          }
+        };
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(axon, s);
+      })();
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0A0A0A;
+            color: #FFFFFF;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .quiz-container {
+            max-width: 500px;
+            width: 100%;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FDB813, #F59E0B);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .question-screen {
+            display: none;
+        }
+
+        .question-screen.active {
+            display: block;
+            animation: slideIn 0.4s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .intro-screen {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFFFFF, #FDB813);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .question-number {
+            font-size: 14px;
+            font-weight: 600;
+            color: #FDB813;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            color: #FFFFFF;
+        }
+
+        .answer-btn {
+            width: 100%;
+            padding: 20px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .answer-btn:hover, .answer-btn:active {
+            background: rgba(253, 184, 19, 0.1);
+            border-color: #FDB813;
+            transform: translateX(4px);
+        }
+
+        .cta-btn {
+            width: 100%;
+            padding: 20px 32px;
+            background: linear-gradient(135deg, #FDB813, #F59E0B);
+            border: none;
+            border-radius: 16px;
+            color: #0A0A0A;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(253, 184, 19, 0.3);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .cta-btn:hover, .cta-btn:active {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(253, 184, 19, 0.4);
+        }
+
+        .results-screen {
+            display: none;
+            text-align: center;
+        }
+
+        .results-screen.active {
+            display: block;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        .score-display {
+            font-size: 72px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FDB813, #F59E0B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 20px 0;
+        }
+
+        .result-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+        }
+
+        .result-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .result-description strong {
+            color: #FDB813;
+            font-weight: 700;
+        }
+
+        .price-tag {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 15px;
+        }
+
+        .price-tag .old-price {
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+
+        .price-tag .new-price {
+            color: #FDB813;
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 28px; }
+            .question-text { font-size: 20px; }
+            .answer-btn { padding: 18px 20px; font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress" style="width: 0%;"></div>
+        </div>
+
+        <!-- Intro Screen -->
+        <div class="question-screen active intro-screen" id="intro">
+            <h1>Is Drinking Getting In The Way of Your Ambitions?</h1>
+            <p class="intro-text">You're successful on paper. But deep down, you know you're capable of more. Take this 60-second quiz to discover if alcohol is quietly sabotaging your biggest goals.</p>
+            <button class="cta-btn" onclick="startQuiz()">Start Quiz →</button>
+        </div>
+
+        <!-- Question 1 -->
+        <div class="question-screen" id="q1">
+            <p class="question-number">Question 1 of 5</p>
+            <h2 class="question-text">Do you consider yourself an ambitious person?</h2>
+            <button class="answer-btn" onclick="answer(1, 0)">A) Absolutely - I'm driven to achieve big things</button>
+            <button class="answer-btn" onclick="answer(1, 1)">B) Yes, but I've been stuck lately</button>
+            <button class="answer-btn" onclick="answer(1, 2)">C) I used to be, but something changed</button>
+            <button class="answer-btn" onclick="answer(1, 3)">D) Not sure anymore</button>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question-screen" id="q2">
+            <p class="question-number">Question 2 of 5</p>
+            <h2 class="question-text">In the last 6 months, how many of your goals have you actually achieved?</h2>
+            <button class="answer-btn" onclick="answer(2, 0)">A) Most of them - I'm on fire</button>
+            <button class="answer-btn" onclick="answer(2, 1)">B) A few, but not as many as I planned</button>
+            <button class="answer-btn" onclick="answer(2, 2)">C) Very few - I keep starting but not finishing</button>
+            <button class="answer-btn" onclick="answer(2, 3)">D) Honestly? None. I just keep pushing them off</button>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question-screen" id="q3">
+            <p class="question-number">Question 3 of 5</p>
+            <h2 class="question-text">Has there been a time when you DIDN'T realize a goal because of drinking?</h2>
+            <button class="answer-btn" onclick="answer(3, 0)">A) No - alcohol doesn't affect my goals</button>
+            <button class="answer-btn" onclick="answer(3, 1)">B) Maybe once or twice, but it was circumstantial</button>
+            <button class="answer-btn" onclick="answer(3, 2)">C) Yes - I've missed workouts, deadlines, or opportunities because I was hungover</button>
+            <button class="answer-btn" onclick="answer(3, 3)">D) Yes, multiple times. It's becoming a pattern</button>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question-screen" id="q4">
+            <p class="question-number">Question 4 of 5</p>
+            <h2 class="question-text">When do you feel most clear about what you really want in life?</h2>
+            <button class="answer-btn" onclick="answer(4, 0)">A) All the time - I know exactly what I want</button>
+            <button class="answer-btn" onclick="answer(4, 1)">B) In the mornings before the day gets crazy</button>
+            <button class="answer-btn" onclick="answer(4, 2)">C) Honestly? Only when I'm NOT drinking</button>
+            <button class="answer-btn" onclick="answer(4, 3)">D) I don't remember the last time I felt truly clear</button>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question-screen" id="q5">
+            <p class="question-number">Question 5 of 5</p>
+            <h2 class="question-text">If you woke up tomorrow and alcohol was just... gone from your life - what would change?</h2>
+            <button class="answer-btn" onclick="answer(5, 0)">A) Not much - I could take it or leave it</button>
+            <button class="answer-btn" onclick="answer(5, 1)">B) I'd probably achieve my goals faster</button>
+            <button class="answer-btn" onclick="answer(5, 2)">C) I'd finally have the energy and focus I've been missing</button>
+            <button class="answer-btn" onclick="answer(5, 3)">D) Everything would change - I'd be unstoppable</button>
+        </div>
+
+        <!-- Results: Low Score (0-5) -->
+        <div class="results-screen" id="result-low">
+            <div class="score-display" id="score-low">0</div>
+            <h2 class="result-title">The Focused Achiever</h2>
+            <p class="result-description">
+                You're crushing it, and alcohol isn't getting in the way. Your ambitions are clear, and you're making progress.
+                <br><br>
+                But here's something to consider: <strong>What if you could achieve even MORE by understanding the connection between feelings and manifestation?</strong>
+                <br><br>
+                The DAILY GROWTH MAP isn't just about quitting drinking - it's about <strong>unlocking your full potential through identity shifts</strong>.
+            </p>
+            <a href="https://dailygrowthmap.com/identity-shift" class="cta-btn">Learn About Identity Shifts →</a>
+        </div>
+
+        <!-- Results: Medium Score (6-10) -->
+        <div class="results-screen" id="result-medium">
+            <div class="score-display" id="score-medium">0</div>
+            <h2 class="result-title">The High-Functioning Question Mark</h2>
+            <p class="result-description">
+                <strong>You're successful on paper... but alcohol is starting to creep into your identity.</strong>
+                <br><br>
+                You're not broken. You're just running on the wrong operating system.
+                <br><br>
+                <strong>The Problem:</strong> You're chasing shadow ambition (ego, comparison, MOAR) and using alcohol to numb the emptiness.
+                <br><br>
+                <strong>The Solution:</strong> Shift your identity so sobriety becomes effortless - not through willpower, but through feelings as divine technology.
+                <br><br>
+                I quit drinking 1.5 years ago. Lost 100 lbs. Saved $1M+. Career went from $240K → $540K.
+                <br><br>
+                <strong>Not through AA. Not through willpower. Through identity shifts.</strong>
+            </p>
+            <a href="https://dailygrowthmap.com/identity-shift" class="cta-btn">Get Your Identity Shift Blueprint →</a>
+            <p class="price-tag"><span class="old-price">$37</span> <span class="new-price">Start for $1</span></p>
+        </div>
+
+        <!-- Results: High Score (11-15) -->
+        <div class="results-screen" id="result-high">
+            <div class="score-display" id="score-high">0</div>
+            <h2 class="result-title">The Ambitious Prisoner</h2>
+            <p class="result-description">
+                <strong>You're trapped.</strong> High income, great career, successful on paper... but alcohol has become your reward system, your off-switch, and your coping mechanism.
+                <br><br>
+                You've tried:
+                <br>• Making rules (only after 5pm, only wine, not on weekdays)
+                <br>• Willpower (lasted a few days max)
+                <br>• Convincing yourself it's not a problem
+                <br><br>
+                <strong>Here's the truth:</strong> You don't have a drinking problem. You have an IDENTITY problem.
+                <br><br>
+                You're living someone else's definition of success and drinking to cope with the disconnection.
+                <br><br>
+                <strong>The good news?</strong> When you shift your identity, sobriety becomes automatic. No white-knuckling. No meetings. No powerless narrative.
+                <br><br>
+                I was you. 275 lbs. Daily drinker. Successful but empty.
+                <br><br>
+                Now: 1.5 years sober. Lost 100 lbs. Saved $1M+. Career $240K → $540K.
+                <br><br>
+                <strong>The method? Identity shifts through feelings as divine technology.</strong>
+            </p>
+            <a href="https://dailygrowthmap.com/identity-shift" class="cta-btn">Unlock Your Identity Shift Blueprint →</a>
+            <p class="price-tag"><span class="old-price">$37</span> <span class="new-price">Start for $1</span></p>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 0;
+        let score = 0;
+        const totalQuestions = 5;
+
+        function startQuiz() {
+            document.getElementById('intro').classList.remove('active');
+            document.getElementById('q1').classList.add('active');
+            currentQuestion = 1;
+            updateProgress();
+            
+            // Track quiz start
+            if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+            if (typeof ttq !== 'undefined') ttq.track('ClickButton');
+            if (typeof AxonPixel !== 'undefined') AxonPixel.track('QuizStart');
+        }
+
+        function answer(question, value) {
+            score += value;
+            
+            // Hide current question
+            document.getElementById('q' + question).classList.remove('active');
+            
+            // Show next question or results
+            if (question < totalQuestions) {
+                currentQuestion = question + 1;
+                document.getElementById('q' + currentQuestion).classList.add('active');
+                updateProgress();
+            } else {
+                showResults();
+            }
+        }
+
+        function updateProgress() {
+            const progress = (currentQuestion / totalQuestions) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        function showResults() {
+            updateProgress(); // Set to 100%
+            
+            // Track quiz completion
+            if (typeof fbq !== 'undefined') fbq('track', 'CompleteRegistration');
+            if (typeof ttq !== 'undefined') ttq.track('CompleteRegistration');
+            if (typeof AxonPixel !== 'undefined') AxonPixel.track('QuizComplete');
+            
+            // Determine result tier
+            let resultScreen;
+            let scoreDisplay;
+            
+            if (score <= 5) {
+                resultScreen = document.getElementById('result-low');
+                scoreDisplay = document.getElementById('score-low');
+            } else if (score <= 10) {
+                resultScreen = document.getElementById('result-medium');
+                scoreDisplay = document.getElementById('score-medium');
+            } else {
+                resultScreen = document.getElementById('result-high');
+                scoreDisplay = document.getElementById('score-high');
+            }
+            
+            scoreDisplay.textContent = score + '/15';
+            resultScreen.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
