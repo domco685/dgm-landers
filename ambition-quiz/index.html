@@ -284,50 +284,50 @@
         <div class="question-screen" id="q1">
             <p class="question-number">Question 1 of 5</p>
             <h2 class="question-text">Do you consider yourself an ambitious person?</h2>
-            <button class="answer-btn" onclick="answer(1, 0)">A) Absolutely - I'm driven to achieve big things</button>
-            <button class="answer-btn" onclick="answer(1, 1)">B) Yes, but I've been stuck lately</button>
-            <button class="answer-btn" onclick="answer(1, 2)">C) I used to be, but something changed</button>
-            <button class="answer-btn" onclick="answer(1, 3)">D) Not sure anymore</button>
+            <button class="answer-btn" onclick="answer(1, 3)">A) Absolutely - I'm driven to achieve big things</button>
+            <button class="answer-btn" onclick="answer(1, 2)">B) Yes, but I've been stuck lately</button>
+            <button class="answer-btn" onclick="answer(1, 1)">C) I used to be, but something changed</button>
+            <button class="answer-btn" onclick="answer(1, 0)">D) Not sure anymore</button>
         </div>
 
         <!-- Question 2 -->
         <div class="question-screen" id="q2">
             <p class="question-number">Question 2 of 5</p>
             <h2 class="question-text">In the last 6 months, how many of your goals have you actually achieved?</h2>
-            <button class="answer-btn" onclick="answer(2, 0)">A) Most of them - I'm on fire</button>
-            <button class="answer-btn" onclick="answer(2, 1)">B) A few, but not as many as I planned</button>
-            <button class="answer-btn" onclick="answer(2, 2)">C) Very few - I keep starting but not finishing</button>
-            <button class="answer-btn" onclick="answer(2, 3)">D) Honestly? None. I just keep pushing them off</button>
+            <button class="answer-btn" onclick="answer(2, 3)">A) Most of them - I'm on fire</button>
+            <button class="answer-btn" onclick="answer(2, 2)">B) A few, but not as many as I planned</button>
+            <button class="answer-btn" onclick="answer(2, 1)">C) Very few - I keep starting but not finishing</button>
+            <button class="answer-btn" onclick="answer(2, 0)">D) Honestly? None. I just keep pushing them off</button>
         </div>
 
         <!-- Question 3 -->
         <div class="question-screen" id="q3">
             <p class="question-number">Question 3 of 5</p>
             <h2 class="question-text">Has there been a time when you DIDN'T realize a goal because of drinking?</h2>
-            <button class="answer-btn" onclick="answer(3, 0)">A) No - alcohol doesn't affect my goals</button>
-            <button class="answer-btn" onclick="answer(3, 1)">B) Maybe once or twice, but it was circumstantial</button>
-            <button class="answer-btn" onclick="answer(3, 2)">C) Yes - I've missed workouts, deadlines, or opportunities because I was hungover</button>
-            <button class="answer-btn" onclick="answer(3, 3)">D) Yes, multiple times. It's becoming a pattern</button>
+            <button class="answer-btn" onclick="answer(3, 3)">A) No - alcohol doesn't affect my goals</button>
+            <button class="answer-btn" onclick="answer(3, 2)">B) Maybe once or twice, but it was circumstantial</button>
+            <button class="answer-btn" onclick="answer(3, 1)">C) Yes - I've missed workouts, deadlines, or opportunities because I was hungover</button>
+            <button class="answer-btn" onclick="answer(3, 0)">D) Yes, multiple times. It's becoming a pattern</button>
         </div>
 
         <!-- Question 4 -->
         <div class="question-screen" id="q4">
             <p class="question-number">Question 4 of 5</p>
             <h2 class="question-text">When do you feel most clear about what you really want in life?</h2>
-            <button class="answer-btn" onclick="answer(4, 0)">A) All the time - I know exactly what I want</button>
-            <button class="answer-btn" onclick="answer(4, 1)">B) In the mornings before the day gets crazy</button>
-            <button class="answer-btn" onclick="answer(4, 2)">C) Honestly? Only when I'm NOT drinking</button>
-            <button class="answer-btn" onclick="answer(4, 3)">D) I don't remember the last time I felt truly clear</button>
+            <button class="answer-btn" onclick="answer(4, 3)">A) All the time - I know exactly what I want</button>
+            <button class="answer-btn" onclick="answer(4, 2)">B) In the mornings before the day gets crazy</button>
+            <button class="answer-btn" onclick="answer(4, 1)">C) Honestly? Only when I'm NOT drinking</button>
+            <button class="answer-btn" onclick="answer(4, 0)">D) I don't remember the last time I felt truly clear</button>
         </div>
 
         <!-- Question 5 -->
         <div class="question-screen" id="q5">
             <p class="question-number">Question 5 of 5</p>
             <h2 class="question-text">If you woke up tomorrow and alcohol was just... gone from your life - what would change?</h2>
-            <button class="answer-btn" onclick="answer(5, 0)">A) Not much - I could take it or leave it</button>
-            <button class="answer-btn" onclick="answer(5, 1)">B) I'd probably achieve my goals faster</button>
-            <button class="answer-btn" onclick="answer(5, 2)">C) I'd finally have the energy and focus I've been missing</button>
-            <button class="answer-btn" onclick="answer(5, 3)">D) Everything would change - I'd be unstoppable</button>
+            <button class="answer-btn" onclick="answer(5, 3)">A) Not much - I could take it or leave it</button>
+            <button class="answer-btn" onclick="answer(5, 2)">B) I'd probably achieve my goals faster</button>
+            <button class="answer-btn" onclick="answer(5, 1)">C) I'd finally have the energy and focus I've been missing</button>
+            <button class="answer-btn" onclick="answer(5, 0)">D) Everything would change - I'd be unstoppable</button>
         </div>
 
         <!-- Results: Low Score (0-5) -->
@@ -461,19 +461,19 @@
             if (typeof ttq !== 'undefined') ttq.track('CompleteRegistration');
             if (typeof AxonPixel !== 'undefined') AxonPixel.track('QuizComplete');
             
-            // Determine result tier
+            // Determine result tier (reversed: high score = doing great)
             let resultScreen;
             let scoreDisplay;
             
             if (score <= 5) {
-                resultScreen = document.getElementById('result-low');
-                scoreDisplay = document.getElementById('score-low');
+                resultScreen = document.getElementById('result-high');
+                scoreDisplay = document.getElementById('score-high');
             } else if (score <= 10) {
                 resultScreen = document.getElementById('result-medium');
                 scoreDisplay = document.getElementById('score-medium');
             } else {
-                resultScreen = document.getElementById('result-high');
-                scoreDisplay = document.getElementById('score-high');
+                resultScreen = document.getElementById('result-low');
+                scoreDisplay = document.getElementById('score-low');
             }
             
             scoreDisplay.textContent = score + '/15';
@@ -529,13 +529,41 @@
                 })
             })
             .then(response => {
-                // Redirect to thank you / delivery page
-                window.location.href = 'https://dailygrowthmap.com/identity-shift?email=' + encodeURIComponent(email) + '&tier=' + tier;
+                // Redirect to thank you / delivery page with UTM params preserved
+                const targetUrl = new URL('https://dailygrowthmap.com/identity-shift/quit-drinking');
+                const currentParams = new URLSearchParams(window.location.search);
+                
+                // Preserve UTM params and fbclid from ad
+                currentParams.forEach((value, key) => {
+                    if (key.startsWith('utm_') || key === 'fbclid') {
+                        targetUrl.searchParams.set(key, value);
+                    }
+                });
+                
+                // Add signup trigger for Lovable banner
+                targetUrl.searchParams.set('from', 'signup');
+                targetUrl.searchParams.set('email', email);
+                targetUrl.searchParams.set('tier', tier);
+                
+                window.location.href = targetUrl.toString();
             })
             .catch(error => {
                 console.error('Klaviyo error:', error);
-                // Redirect anyway
-                window.location.href = 'https://dailygrowthmap.com/identity-shift?email=' + encodeURIComponent(email) + '&tier=' + tier;
+                // Redirect anyway with same params
+                const targetUrl = new URL('https://dailygrowthmap.com/identity-shift/quit-drinking');
+                const currentParams = new URLSearchParams(window.location.search);
+                
+                currentParams.forEach((value, key) => {
+                    if (key.startsWith('utm_') || key === 'fbclid') {
+                        targetUrl.searchParams.set(key, value);
+                    }
+                });
+                
+                targetUrl.searchParams.set('from', 'signup');
+                targetUrl.searchParams.set('email', email);
+                targetUrl.searchParams.set('tier', tier);
+                
+                window.location.href = targetUrl.toString();
             });
         }
     </script>
